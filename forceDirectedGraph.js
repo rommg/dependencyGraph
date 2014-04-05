@@ -1,8 +1,7 @@
 /**
  * Created by guyr on 3/22/14.
  */
-var graphLinks;
-
+var graphData;
 // get the data
 var onSubmit = function(){
     var className = document.getElementById("className").value || '';
@@ -11,10 +10,13 @@ var onSubmit = function(){
         requestedClass: className,
         requestedMethod: methodName
     }, function(data){
-        if (data.graphLinks.length === 0){
+        if (!data){
+            return;
+        }
+        if (!data.graphNodes){
             alert("no dependencies");
         } else {
-            graphLinks = data.graphLinks;
+            graphData = data;
             createAndShowGraph();
         }
     })
@@ -29,39 +31,47 @@ var clearPreviousGraph = function(){
 
 var createAndShowGraph = function(){
     var hideOptional = !(document.getElementById('optionalCheckBox').checked),
+        experimentsData,
         nodes = {},
-        links = _.cloneDeep(graphLinks);
-
-    if (!links){
-        return;
-    }
+        links,
+        linkToMaster = true;
 
     clearPreviousGraph();
 
+    experimentsData = _.cloneDeep(graphData.graphNodes);
 
-// Compute the distinct nodes from the links.
-    links.forEach(function(link) {
-        if (nodes[link.source]){
-            if (!(nodes[link.source].owner)){
-                nodes[link.source].owner = link.sourceOwner;
-            }
-        } else {
-            nodes[link.source] = {
-                name: link.source,
-                owner: link.sourceOwner
-            };
+    if (linkToMaster){
+        experimentsData['Master'] = createMasterExpObj();
+    }
+
+    //create graph nodes
+    _.forEach(experimentsData, function(node){
+        nodes[node.name] = {
+            name: node.name,
+            owner: node.owner
         }
-        if (!hideOptional || link.dependencyType.indexOf('optional') === -1){
-            link.source = nodes[link.source];
-
-            link.target = nodes[link.target] ||
-                (nodes[link.target] = {name: link.target});
-        }
-
     });
+
+    // create links data
+    var links = createGraphLinks(experimentsData, graphData.experiments);
+
+    // filter optional links if needed
+    if (hideOptional){
+        links = _.filter(links, function(link){
+            return link.dependencyType.indexOf('optional') === -1;
+        })
+    }
+    // update links to point to the actual nodes members - must for D3
+    links.forEach(function(link) {
+            link.source = nodes[link.source];
+            link.target = nodes[link.target];
+    });
+
     var width = 960,
         height = 650;
 
+    // when master is off, change charge to -1500 and maybe smaller distance
+    // default is distance 100 and force -1800
     var force = d3.layout.force()
         .nodes(d3.values(nodes))
         .links(links)
@@ -148,3 +158,53 @@ var createAndShowGraph = function(){
                 return "translate(" + d.x + "," + d.y + ")"; });
     }
 }
+
+/**
+ * Create links between 2 experiments that have a mutual dependency
+ * for experiments without constraints,
+ * or all of their constraints are not relevant to the requested class - a link is created to Master.
+ * @param graphNodes
+ * @param experiments
+ * @returns {Array}
+ */
+var createGraphLinks = function (graphNodes, experiments) {
+    var isInMaster = _.contains(experiments, 'Master'),
+        dependencies,
+        links = [],
+        hasRelevantDependency;
+    _.each(graphNodes, function (experimentData) {
+        hasRelevantDependency = false;
+        dependencies = experimentData.dependencies;
+        if (dependencies) {
+            _.each(dependencies, function (dependencyType, dependencyName) {
+                if (_.contains(experiments, dependencyName)) {
+                    hasRelevantDependency = true;
+                    links.push({
+                        source: experimentData.name,
+                        sourceOwner: experimentData.owner,
+                        target: dependencyName,
+                        dependencyType: dependencyType
+                    });
+                }
+            });
+        }
+        if (!hasRelevantDependency && isInMaster && graphNodes['Master']) {
+            links.push({
+                source: experimentData.name,
+                sourceOwner: experimentData.owner,
+                target: 'Master',
+                dependencyType: 'required-before'
+            });
+        }
+    });
+    return links;
+};
+
+var createMasterExpObj = function(){
+    return {
+        name: 'Master',
+        owner: 'Stalin',
+        dependencies: {}
+    }
+};
+

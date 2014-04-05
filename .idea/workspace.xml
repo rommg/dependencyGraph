@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8dd9c763-cb35-40ff-9d92-195526a9cb33" name="Default" comment="" />
+    <list default="true" id="8dd9c763-cb35-40ff-9d92-195526a9cb33" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forceDirectedGraph.js" afterPath="$PROJECT_DIR$/forceDirectedGraph.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLinters/jslint.xml" afterPath="$PROJECT_DIR$/.idea/jsLinters/jslint.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph/styles.css" afterPath="$PROJECT_DIR$/graph/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="qPractice.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,19 +32,37 @@
       <file leaf-file-name="forceDirected.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forceDirected.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="54" selection-start="1389" selection-end="1407" vertical-scroll-proportion="-20.741936" vertical-offset="61" max-vertical-offset="902">
+            <state line="19" column="14" selection-start="889" selection-end="889" vertical-scroll-proportion="-11.5161295" vertical-offset="61" max-vertical-offset="902">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forceDirectedGraph.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="forceDirected.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graph/forceDirected.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="8" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1364">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/graph/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.26834863" vertical-offset="558" max-vertical-offset="1430">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forceDirectedGraph.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forceDirectedGraph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="8" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.55504584" vertical-offset="132" max-vertical-offset="2992">
+            <state line="45" column="0" selection-start="1170" selection-end="1170" vertical-scroll-proportion="2.6923077" vertical-offset="576" max-vertical-offset="4268">
               <folding>
-                <element signature="e#97#585#0" expanded="false" />
-                <element signature="e#622#766#0" expanded="false" />
+                <element signature="e#95#609#0" expanded="false" />
+                <element signature="e#646#790#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -50,6 +74,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -64,6 +91,7 @@
         <option value="$PROJECT_DIR$/graph/forceDirected.css" />
         <option value="$PROJECT_DIR$/node_modules/lodash/lodash.js" />
         <option value="$PROJECT_DIR$/forceDirected.html" />
+        <option value="$PROJECT_DIR$/graph/styles.css" />
         <option value="$PROJECT_DIR$/forceDirectedGraph.js" />
       </list>
     </option>
@@ -74,7 +102,29 @@
     <option name="width" value="1936" />
     <option name="height" value="1053" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Code quality toolsJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JSLint</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -171,7 +221,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="Settings.JavaScript.Linters.JSLint" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -259,6 +309,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14955239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -269,7 +320,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -296,8 +346,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2992">
           <folding>
-            <element signature="e#97#585#0" expanded="false" />
-            <element signature="e#622#766#0" expanded="false" />
+            <element signature="e#95#609#0" expanded="false" />
+            <element signature="e#646#790#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -320,8 +370,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="42" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3102">
           <folding>
-            <element signature="e#97#585#0" expanded="false" />
-            <element signature="e#622#766#0" expanded="false" />
+            <element signature="e#95#609#0" expanded="false" />
+            <element signature="e#646#790#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -344,8 +394,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="90" column="70" selection-start="2428" selection-end="2428" vertical-scroll-proportion="0.0" vertical-offset="1540" max-vertical-offset="3674">
           <folding>
-            <element signature="e#97#585#0" expanded="false" />
-            <element signature="e#622#766#0" expanded="false" />
+            <element signature="e#95#609#0" expanded="false" />
+            <element signature="e#646#790#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -368,8 +418,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2596">
           <folding>
-            <element signature="e#97#585#0" expanded="false" />
-            <element signature="e#622#766#0" expanded="false" />
+            <element signature="e#95#609#0" expanded="false" />
+            <element signature="e#646#790#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -392,8 +442,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="38" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3674">
           <folding>
-            <element signature="e#97#585#0" expanded="false" />
-            <element signature="e#622#766#0" expanded="false" />
+            <element signature="e#95#609#0" expanded="false" />
+            <element signature="e#646#790#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -416,8 +466,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="21" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="3674">
           <folding>
-            <element signature="e#97#585#0" expanded="false" />
-            <element signature="e#622#766#0" expanded="false" />
+            <element signature="e#95#609#0" expanded="false" />
+            <element signature="e#646#790#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -427,34 +477,34 @@
         <state line="13" column="8" selection-start="463" selection-end="463" vertical-scroll-proportion="0.3329453" vertical-offset="0" max-vertical-offset="158070" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph/forceDirected.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="1" selection-start="361" selection-end="361" vertical-scroll-proportion="0.1261468" vertical-offset="418" max-vertical-offset="1364">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="106" selection-end="106" vertical-scroll-proportion="-0.32798165" vertical-offset="528" max-vertical-offset="1430">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forceDirected.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="54" selection-start="1389" selection-end="1407" vertical-scroll-proportion="-20.741936" vertical-offset="61" max-vertical-offset="902">
+        <state line="19" column="14" selection-start="889" selection-end="889" vertical-scroll-proportion="-11.5161295" vertical-offset="61" max-vertical-offset="902">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph/forceDirected.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="8" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1364">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/forceDirectedGraph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="8" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.55504584" vertical-offset="132" max-vertical-offset="2992">
+        <state line="45" column="0" selection-start="1170" selection-end="1170" vertical-scroll-proportion="2.6923077" vertical-offset="576" max-vertical-offset="4268">
           <folding>
-            <element signature="e#97#585#0" expanded="false" />
-            <element signature="e#622#766#0" expanded="false" />
+            <element signature="e#95#609#0" expanded="false" />
+            <element signature="e#646#790#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.26834863" vertical-offset="558" max-vertical-offset="1430">
+          <folding />
         </state>
       </provider>
     </entry>
