@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+    <title>Dependency Graph</title>
+    <link rel="stylesheet" type="text/css" href="graph/forceDirected.css">
+    <link rel="stylesheet" type="text/css" href="graph/styles.css">
+</head>
+
+<body>
+<div id="contentContainer">
+    <div id="uiContainer">
+        <div class="title text">The dependency graph!</div>
+        <div class="subtitle text">Enter class name and click submit to get the graph. Method name is optional.</div>
+        <input id="className" type="text" placeHolder="class name"	>
+        <input id="methodName" type="text" placeHolder="method name (optional)">
+        <button id="submit" class="button" onclick="onSubmit()">Submit</button>
+        <div>
+            <input id="optionalCheckBox" type="checkbox" width="10px" height="10px" checked onclick="createAndShowGraph()">Show optional dependencies
+        </div>
+    </div>
+    <div id="legendContainer">
+        <div id="legendTitleContainer">
+            <div class="legendTitle text">Legend</div>
+        </div>
+    </div>
+</div>
+<div id="graphContainer"></div>
+
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="node_modules/lodash/lodash.js"></script>
+<script type="text/javascript" src="forceDirectedGraph.js"></script>
+</body>
+
+</html>

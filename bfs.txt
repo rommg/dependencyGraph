@@ -1,0 +1,14 @@
+for each experiment - create an object was a property of color - white
+create a queue with an array 
+enqueue the requested experiment
+while queue isn't empty {	
+	v = dequeue()
+	mark v as black
+	for each v' neighbor of v {
+		if v' is black {
+			add the link v <-> v' to the links list
+			enqueue v'
+		}
+	}
+}
+	
