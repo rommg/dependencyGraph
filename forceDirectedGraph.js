@@ -53,7 +53,10 @@ var createAndShowGraph = function(){
     });
 
     // create links data
-    var links = createGraphLinks(experimentsData, graphData.experiments);
+    var experimentNames = _.map(experimentsData, function(expData,expName){
+        return expName;
+    })
+    var links = createGraphLinks(experimentsData, experimentNames);
 
     // filter optional links if needed
     if (hideOptional){
