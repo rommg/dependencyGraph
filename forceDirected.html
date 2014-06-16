@@ -10,19 +10,48 @@
 <body>
 <div id="contentContainer">
     <div id="uiContainer">
-        <div class="title text">The dependency graph!</div>
-        <div class="subtitle text">Enter class name and click submit to get the graph. Method name is optional.</div>
-        <input id="className" type="text" placeHolder="class name"	>
-        <input id="methodName" type="text" placeHolder="method name (optional)">
-        <button id="submit" class="button" onclick="onSubmit()">Submit</button>
+        <h2 class="title text">The dependency graph!</h2>
+        <p class="subtitle text">Enter class name and click submit to get the graph. Method name is optional.</p>
+        <div>
+            <input id="className" type="text" placeHolder="class name">
+            <input id="methodName" type="text" placeHolder="method name (optional)">
+            <button id="submitClass" class="button"  onclick="onClassSubmit()">Submit</button>
+        </div>
+        <div style="margin:5px 0;">
+            OR
+        </div>
+        <div>
+            <input id="experimentName" type="text" placeHolder="Experiment name">
+            <button id="submitExperiment" class="button" onclick="onExperimentSubmit()">Submit</button>
+        </div>
+
         <div>
             <input id="optionalCheckBox" type="checkbox" width="10px" height="10px" checked onclick="createAndShowGraph()">Show optional dependencies
         </div>
     </div>
     <div id="legendContainer">
-        <div id="legendTitleContainer">
-            <div class="legendTitle text">Legend</div>
-        </div>
+        <h3>Legend</h3>
+        <ul class="legendList">
+            <li>
+                <div class="circle openExpColor"></div>
+                <div class="text">open to users</div>
+            </li>
+            <li>
+                <div class="circle closedExpColor"></div>
+                <div class="text">open to users</div>
+            </li>
+            <li>
+                <div class="line required"></div>
+                <div class="text">required</div>
+            </li>
+            <li>
+                <div class="line optional"></div>
+                <div class="text">optional</div>
+            </li>
+        </ul>
+
+
+
     </div>
 </div>
 <div id="graphContainer"></div>

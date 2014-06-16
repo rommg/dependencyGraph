@@ -14,12 +14,20 @@ path.link.optAfter {
     stroke: red;
     stroke-dasharray: 5,5;
 }
+
 path.link.reqAfter {
     stroke: red;
-
 }
-circle {
+
+circle.open {
+    fill: lawngreen;
+}
+
+circle.closed {
     fill: #ccc;
+}
+
+circle {
     stroke: #fff;
     stroke-width: 1.5px;
 }
@@ -55,3 +63,4 @@ text.ownerText {
     height:20px;
     font-size: 15px;
 }
+

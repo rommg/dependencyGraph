@@ -3,7 +3,7 @@
  */
 var graphData;
 // get the data
-var onSubmit = function(){
+var onClassSubmit = function(){
     var className = document.getElementById("className").value || '';
     var methodName = document.getElementById("methodName").value || '';
     $.get('http://localhost:4010/rest/dependencyGraph', {
@@ -17,9 +17,47 @@ var onSubmit = function(){
             alert("no dependencies");
         } else {
             graphData = data;
-            createAndShowGraph();
+            getExperimentsStatus();
         }
+    });
+}
+
+var onExperimentSubmit = function(){
+    var experimentName = document.getElementById("experimentName").value || '';
+    if (!experimentName){
+        return;
+    }
+
+    $.get('http://localhost:4010/rest/dependencyGraph', {
+        requestedExperiment: experimentName
+    }, function(data){
+        if (!data){
+            return;
+        }
+        if (!data.graphNodes){
+            alert("no dependencies");
+        } else {
+            graphData = data;
+            getExperimentsStatus();
+        }
+    });
+}
+
+var getExperimentsStatus = function(){
+    var experimentNames = _.map(graphData.graphNodes, function(expData, expName){
+        return expName;
     })
+    var url = 'http://itayjiraapp.appspot.com/getexperiment?id=' + experimentNames.join(',') + '&isopen';
+    $.get(url, {}, function(data){
+        if (!data){
+            return;
+        }
+        var result = JSON.parse(data);
+        _.forEach(result, function(openToUsers, expName){
+            graphData.graphNodes[expName].openToUsers = openToUsers;
+        });
+        createAndShowGraph();
+    });
 }
 
 var clearPreviousGraph = function(){
@@ -34,7 +72,7 @@ var createAndShowGraph = function(){
         experimentsData,
         nodes = {},
         links,
-        linkToMaster = true;
+        linkToMaster = false;
 
     clearPreviousGraph();
 
@@ -48,7 +86,8 @@ var createAndShowGraph = function(){
     _.forEach(experimentsData, function(node){
         nodes[node.name] = {
             name: node.name,
-            owner: node.owner
+            owner: node.owner,
+            openToUsers: node.openToUsers
         }
     });
 
@@ -79,7 +118,7 @@ var createAndShowGraph = function(){
         .nodes(d3.values(nodes))
         .links(links)
         .size([width, height])
-        .linkDistance(100)
+        .linkDistance(200)
         .charge(-1800)
         .on("tick", tick)
         .start();
@@ -128,7 +167,11 @@ var createAndShowGraph = function(){
         .call(force.drag);
 // add the nodes
     node.append("circle")
-        .attr("r", 10);
+        .attr("r", 10)
+        .attr("class", function(n) {
+            var temp = 5;
+            return (n.openToUsers==='true' ? 'open' : 'closed');
+        });
 
 // add the experiment name
     node.append("text")
